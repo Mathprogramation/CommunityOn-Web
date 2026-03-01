@@ -134,7 +134,8 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 76vh;
+    min-width: 100vw;
 }
 
 #home-buttons{
@@ -191,7 +192,7 @@ header {
 
 /* ===== SEÇÃO RECURSOS ===== */
 #recursos {
-    padding: 80px 60px;
+    padding: 60px 100px;
     text-align: center;
 }
 
@@ -246,19 +247,55 @@ header {
     display: block;
 }
 
-/* ===== ÍCONES (placeholder circle) ===== */
-.recursos-cards article::before {
-    content: "⬤";
+/* ===== ÍCONES nos cards ===== */
+
+#card-problem::before{
+    content: "🛠️";
     display: block;
     font-size: 2.5rem;
-    color: #4f46e5;
     margin-bottom: 15px;
 }
+
+#card-comunidade::before{
+    content: "🗳️";
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#card-servicos::before{
+    content: "🤝";
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#card-insights::before{
+    content: "📊";
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#card-moradores::before{
+    content: "📇";
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+#card-progresso::before{
+    content: "⏳";
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
 
 /* ===== SEÇÃO VÍDEO ===== */
 #projeto {
     text-align: center;
-    padding: 100px 20px;
+    padding: 35px 20px;
     background-color: #fff;
 }
 
@@ -309,7 +346,7 @@ header {
 
 /* ===== SEÇÃO BENEFÍCIOS ===== */
 #beneficios {
-    padding: 100px 60px;
+    padding: 50px 100px;
     background-color: #f9fafb;
     text-align: center;
 }
@@ -459,7 +496,7 @@ header {
 #quemSomos {
     background-color: #f9fafb;
     text-align: center;
-    padding: 100px 60px;
+    padding: 50px 80px;
 }
 
 /* Título e subtítulo */
@@ -827,7 +864,7 @@ header {
 
 /* ===== SEÇÃO PORQUE FUNCIONA ===== */
 #porqueFunciona {
-    padding: 80px 10%;
+    padding: 50px 10%;
     text-align: center;
     background-color: #f8fafc;
     /* leve contraste de fundo */
@@ -889,6 +926,34 @@ header {
     line-height: 1.6;
     color: #475569;
 }
+
+/* ===== SEÇÃO FAQ ===== */
+#faq {
+    padding: 60px 100px;
+    text-align: center;
+}
+#faq h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 35px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-container article {
+    background-color: white;
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
 /* ===== BOTÃO FLUTUANTE WHATSAPP ===== */
 .whatsapp-float {
   position: fixed;
@@ -916,119 +981,270 @@ header {
 }
 
 /* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
+/* =========================
+   RESPONSIVIDADE (SEM ANINHAR)
+   ========================= */
+
+/* --- até 1000px (tablet grande) --- */
+@media (max-width: 1000px) {
+    main {
+    padding-top: 130px; /* header fica mais alto */
+  }
+
+  #home {
+    padding-top: 60px; /* mantém hero parecido com desktop */
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  #home h1 {
+    font-size: 2.5rem;
+    line-height: 1.12;
+  }
     header {
-        flex-direction: column;
-        gap: 15px;
-    }
+    padding: 18px 24px;
+  }
 
-    .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+  .navbar {
+    gap: 18px;
+  }
 
-    #home h1 {
-        font-size: 2rem;
-    }
+  .recursos-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 
-    #recursos {
-        padding: 60px 20px;
-    }
+  .sobre-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
 
-    #beneficios {
-    padding: 10px 10px;
+  .video iframe {
+    width: 92%;
+    height: 420px;
+  }
+
+  #recursos,
+  #beneficios,
+  #quemSomos,
+  #faq {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
-    @media (max-width: 900px) {
-        .recursos-cards {
-            grid-template-columns: repeat(2, 1fr);
-            /* 2 cards por fileira em tablets */
-        }
-    }
+/* --- até 768px (tablet / celular) --- */
+@media (max-width: 768px) {
+    main {
+    padding-top: 170px; /* ✅ espaço do header */
+  }
 
-    @media (max-width: 600px) {
-        .recursos-cards {
-            grid-template-columns: 1fr;
-            /* 1 card por fileira em celulares */
-        }
-    }
+  #home {
+    padding: 110px 20px 50px;
+  }
 
-    @media (max-width: 900px) {
-        .beneficios-cards {
-            flex-direction: column;
-            align-items: center;
-        }
+  /* TÍTULO */
+  #home h1 {
+    font-size: 2.2rem;
+    line-height: 1.15;   /* 🔹 aproxima as linhas */
+    margin-bottom: 6px;  /* 🔹 reduz espaço abaixo */
+  }
 
-        .beneficios-cards article {
-            max-width: 90%;
-            min-height: none;
-        }
+  /* TEXTO */
+  #home p {
+    max-width: 520px;    /* 🔹 evita texto muito largo */
+    font-size: 1rem;
+    line-height: 1.45;   /* 🔹 texto mais compacto */
+    margin-bottom: 24px; /* 🔹 antes estava muito grande */
+  }
 
-        .percent-cards {
-            gap: 20px;
-        }
-    }
+  /* BOTÕES */
+  #home button {
+    margin-top: 6px;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+  }
 
-    @media (max-width: 900px) {
-        #quemSomos {
-            padding: 80px 20px;
-        }
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
 
-        .sobre-cards {
-            gap: 30px;
-            grid-template-columns: repeat(1, 1fr);
-        }
+  .botoes-acesso {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
-        .sobre-cards article {
-            max-width: 90%;
-        }
-    }
+  #home {
+    min-height: auto;
+    padding: 120px 18px 60px; /* dá respiro do header */
+    min-width: auto; /* evita bug de 100vw com scroll */
+  }
 
-    @media (max-width: 768px) {
-        #chamada-acao {
-            padding: 80px 20px;
-        }
+  #home h1 {
+    font-size: 2rem;
+  }
 
-        #chamada-acao h1 {
-            font-size: 1.8rem;
-        }
+  #home p {
+    font-size: 1rem;
+    padding: 0 6px;
+  }
 
-        #chamada-acao p {
-            font-size: 0.95rem;
-        }
+  /* botões do hero em coluna */
+  #home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: center;
+  }
 
-        #chamada-acao div:last-child {
-            flex-direction: column;
-            gap: 15px;
-        }
+  #home button {
+    width: 90%;
+    max-width: 320px;
+    margin: 0;
+  }
 
-        .btn-comece,
-        .btn-agendar {
-            width: 90%;
-            max-width: 300px;
-        }
-    }
+  .beneficios-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
 
-    @media (max-width: 900px) {
-        .footer-container {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+  .beneficios-cards article {
+    max-width: 520px;
+    width: 100%;
+  }
 
-        .footer-bottom {
-            text-align: center;
-        }
-    }
+  .percent-cards {
+    gap: 18px;
+  }
 
-    @media (max-width: 1000px) {
-        .cards-wrapper {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
+  .video iframe {
+    width: 95%;
+    height: 320px;
+  }
 
-    @media (max-width: 650px) {
-        .cards-wrapper {
-            grid-template-columns: 1fr;
-        }
-    }
+  #chamada-acao {
+    padding: 70px 18px;
+  }
+
+  #chamada-acao h1 {
+    font-size: 1.8rem;
+  }
+
+  #chamada-acao p {
+    font-size: 0.95rem;
+  }
+
+  /* footer em coluna */
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --- até 600px (celular) --- */
+@media (max-width: 600px) {
+
+     main {
+    padding-top: 170px; /* ✅ espaço do header */
+  }
+
+  #home {
+    padding-top: 60px;  /* agora é só respiro interno */
+  }
+  .recursos-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-cards {
+    grid-template-columns: 1fr;
+  }
+
+  #recursos h1,
+  #beneficios h1,
+  #quemSomos h1,
+  #projeto h1,
+  #faq h1,
+  #porqueFunciona h1 {
+    font-size: 1.7rem;
+  }
+
+  .whatsapp-float {
+    width: 54px;
+    height: 54px;
+    font-size: 1.8rem;
+    bottom: 18px;
+    right: 18px;
+  }
+}
+
+/* --- até 420px (bem pequeno) --- */
+@media (max-width: 420px) {
+    main {
+    padding-top: 170px; /* ✅ espaço do header */
+  }
+
+  #home {
+    padding-top: 60px;  /* agora é só respiro interno */
+  }
+
+  #chamada-acao div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px; /* controla o espaço entre botões */
+  }
+
+  #chamada-acao .btn-agendar {
+    margin-top: 10px;
+  }
+  /* Sections: menos “vazio” e mais parecido com desktop */
+  #recursos,
+  #projeto,
+  #beneficios,
+  #quemSomos,
+  #porqueFunciona,
+  #faq {
+    padding: 48px 16px;     /* antes era 60/100px etc */
+  }
+
+  /* títulos em mobile: mantém presença sem quebrar */
+  #recursos h1,
+  #projeto h1,
+  #beneficios h1,
+  #quemSomos h1,
+  #porqueFunciona h1,
+  #faq h1 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+  }
+
+  /* textos das sections */
+  #recursos p,
+  #projeto p,
+  #beneficios p,
+  #quemSomos p,
+  #porqueFunciona p {
+    margin-bottom: 28px;    /* reduz o “buracão” */
+    font-size: 1rem;
+  }
+
+  /* grid cards: 1 coluna com gap menor */
+  .recursos-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .percent-cards {
+    margin-top: 40px;       /* antes 80px */
+    gap: 14px;
+  }
 }
